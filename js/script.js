@@ -23,6 +23,12 @@ function pedirEdadYMostrar() {
     const mensaje = edad > 20 ? "Eres mayor de 20 años." : "No eres mayor de 20 años.";
     alert(mensaje);
     const resultado = document.getElementById('edadResultado');
+    const nombreGuardado = localStorage.getItem("nombreUsuario");
+if (span && nombreGuardado) {
+  span.textContent = nombreGuardado;
+  alert("Bienvenido nuevamente, " + nombreGuardado + "!");
+}
+
     if (resultado) resultado.textContent = mensaje;
   } else {
     alert("No ingresaste una edad válida.");
