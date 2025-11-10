@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Página 2 - Galería</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header><h1>Galería de Imágenes</h1></header>
+  <div class="container">
+    <p>Galería con 5 imágenes, cada una con animación diferente. Usa el botón de abajo para ejecutar el script de bienvenida/edad.</p>
+
+    <div>
+      <a class="btn" href="index.html">Ir a Principal</a>
+      <a class="btn" href="pagina3.html">Ir a Tabla</a>
+      <a class="btn" href="#" onclick="pedirEdadYMostrar()">Comprobar Edad</a>
+    </div>
+
+    <div class="gallery" style="margin-top:16px;">
+      <img src="images/img1.jpg" alt="img1" class="img1">
+      <img src="images/img2.jpg" alt="img2" class="img2">
+      <img src="images/img3.jpg" alt="img3" class="img3">
+      <img src="images/img4.jpg" alt="img4" class="img4">
+      <img src="images/img5.jpg" alt="img5" class="img5">
+    </div>
+
+    <p id="edadResultado" style="font-weight:600; margin-top:12px;"></p>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
