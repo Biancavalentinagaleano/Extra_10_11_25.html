@@ -1,1 +1,90 @@
+/* styles.css - estilos globales */
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg,#f0f4ff,#fffaf0);
+  color: #222;
+}
+
+/* header común */
+header {
+  background: #0a74d1;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  margin-bottom: 20px;
+}
+
+/* contenedor central */
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(10,10,30,0.06);
+}
+
+/* Botones animados */
+.btn {
+  display:inline-block;
+  margin: 8px;
+  padding: 12px 20px;
+  background: #0a74d1;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s;
+  box-shadow: 0 4px 12px rgba(10,116,209,0.25);
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(10,116,209,0.18); }
+
+/* Imagenes galería (100px ancho) */
+.gallery img {
+  width: 100px; /* escala solicitada */
+  height: 100px;
+  object-fit: cover;
+  margin: 8px;
+  border-radius: 8px;
+  transition: transform .5s, filter .4s;
+}
+
+/* Animaciones distintas para cada imagen (usa clases img1..img5) */
+.img1:hover { transform: scale(1.12) rotate(-5deg); }
+.img2:hover { transform: translateY(-8px) scale(1.08); }
+.img3:hover { filter: saturate(140%); transform: scale(1.06); }
+.img4:hover { transform: scale(1.12) rotate(6deg); }
+.img5:hover { transform: translateX(6px) scale(1.06); }
+
+/* Tabla (Página3) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th, td {
+  padding: 10px 12px;
+  border: 1px solid #e0e6f0;
+  text-align: left;
+}
+th {
+  background: linear-gradient(90deg,#dbeeff,#ffffff);
+  animation: cabezal 2s ease-in-out infinite alternate;
+}
+
+/* simple keyframes */
+@keyframes cabezal {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+/* responsive */
+@media (max-width:600px) {
+  .gallery img { width: 80px; height:80px; }
+  .btn { padding: 10px 14px; }
+}
 
