@@ -1,22 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página 1 - Principal</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Cargamos el JS con defer para que espere a que se cargue todo el HTML -->
-  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header><h1>Página Principal - Ejercicio de Programación Web</h1></header>
+  <header>
+    <h1>Página Principal - Ejercicio Programación Web</h1>
+  </header>
 
   <div class="container">
-    <p>Esta página principal contiene 3 botones que llevan a las otras páginas. Aquí verás un saludo con tu nombre.</p>
+    <p>Presiona el botón para ingresar tu nombre y mostrar el saludo.</p>
 
     <div>
-      <!-- Botón con ID claro -->
-      <button id="btnIniciar" class="btn" type="button">Iniciar (saludo)</button>
+      <button id="btnIniciar" class="btn">Iniciar (saludo)</button>
       <a class="btn" href="pagina2.html">Ir a Galería (Página 2)</a>
       <a class="btn" href="pagina3.html">Ir a Tabla (Página 3)</a>
     </div>
@@ -24,9 +23,9 @@
     <h3>Nombre ingresado: 
       <span id="nombreUsuario" style="font-weight:600">[aún no ingresado]</span>
     </h3>
-
-    <p>Descripción: La Página 2 contiene una galería con animaciones y un script que pide tu edad.  
-    La Página 3 incluye una tabla con operaciones básicas de JavaScript.</p>
   </div>
+
+  <!-- ✅ El script va al final, sin defer -->
+  <script src="js/script.js"></script>
 </body>
 </html>
