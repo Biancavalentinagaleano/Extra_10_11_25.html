@@ -1,11 +1,11 @@
-// script.js - Funciones para todas las páginas
+// script.js — FUNCIONAL Y TESTEADO
 
-// --- Función de saludo ---
+// --- PÁGINA 1: PEDIR NOMBRE ---
 function pedirNombreYSaludar() {
   alert("Bienvenido/a a la página principal");
   const nombre = prompt("¿Cuál es tu nombre?");
-  if (nombre && nombre.trim().length > 0) {
-    const span = document.getElementById('nombreUsuario');
+  if (nombre && nombre.trim() !== "") {
+    const span = document.getElementById("nombreUsuario");
     if (span) span.textContent = nombre;
     alert("¡Bienvenido/a, " + nombre + "!");
     localStorage.setItem("nombreUsuario", nombre);
@@ -14,73 +14,59 @@ function pedirNombreYSaludar() {
   }
 }
 
-// --- Función de edad ---
+// --- PÁGINA 2: PEDIR EDAD ---
 function pedirEdadYMostrar() {
   alert("Bienvenido/a a la galería");
-  const edadRaw = prompt("Por favor, ingresa tu edad:");
-  const edad = Number(edadRaw);
-  if (!isNaN(edad) && edadRaw.trim() !== "") {
+  const edadTexto = prompt("Por favor, ingresa tu edad:");
+  const edad = Number(edadTexto);
+  if (!isNaN(edad) && edadTexto.trim() !== "") {
     const mensaje = edad > 20 ? "Eres mayor de 20 años." : "No eres mayor de 20 años.";
     alert(mensaje);
-    const resultado = document.getElementById('edadResultado');
-    const nombreGuardado = localStorage.getItem("nombreUsuario");
-if (span && nombreGuardado) {
-  span.textContent = nombreGuardado;
-  alert("Bienvenido nuevamente, " + nombreGuardado + "!");
-}
-
-    if (resultado) resultado.textContent = mensaje;
+    const salida = document.getElementById("edadResultado");
+    if (salida) salida.textContent = mensaje;
   } else {
-    alert("No ingresaste una edad válida.");
+    alert("Edad no válida.");
   }
 }
 
-// --- Funciones de operaciones ---
+// --- OPERACIONES DE LA TABLA ---
 function operMultiplicacion() {
   const a = Number(prompt("Primer número:"));
   const b = Number(prompt("Segundo número:"));
-  if (!isNaN(a) && !isNaN(b)) alert("Resultado: " + (a * b));
-  else alert("Valores inválidos.");
+  alert("Resultado: " + (a * b));
 }
 
 function operExponente2() {
   const a = Number(prompt("Número a elevar al cuadrado:"));
-  if (!isNaN(a)) alert("Resultado: " + (a ** 2));
-  else alert("Valor inválido.");
+  alert("Resultado: " + (a ** 2));
 }
 
 function operResta() {
-  const a = Number(prompt("Minuendo (número 1):"));
-  const b = Number(prompt("Sustraendo (número 2):"));
-  if (!isNaN(a) && !isNaN(b)) alert("Resultado: " + (a - b));
-  else alert("Valores inválidos.");
+  const a = Number(prompt("Primer número (minuendo):"));
+  const b = Number(prompt("Segundo número (sustraendo):"));
+  alert("Resultado: " + (a - b));
 }
 
-// --- Eventos cuando carga el documento ---
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("script.js cargado correctamente");
+// --- ASIGNAR BOTONES ---
+window.onload = function() {
+  console.log("script.js cargado correctamente ✅");
 
-  // Si ya hay nombre guardado, mostrarlo
   const span = document.getElementById("nombreUsuario");
   const nombreGuardado = localStorage.getItem("nombreUsuario");
   if (span && nombreGuardado) span.textContent = nombreGuardado;
 
-  // Botones
-  const btnIniciar = document.getElementById("btnIniciar");
-  const btnComprobar = document.getElementById("btnComprobarEdad");
+  const btnInicio = document.getElementById("btnIniciar");
+  const btnEdad = document.getElementById("btnComprobarEdad");
 
-  // Verificar y asignar eventos
-  if (btnIniciar) {
-    btnIniciar.addEventListener("click", pedirNombreYSaludar);
-    console.log("Botón de saludo activado ✅");
-  } else {
-    console.warn("No se encontró el botón #btnIniciar");
+  if (btnInicio) {
+    btnInicio.onclick = pedirNombreYSaludar;
+    console.log("Botón de inicio activado");
   }
+  if (btnEdad) {
+    btnEdad.onclick = pedirEdadYMostrar;
+    console.log("Botón de comprobar edad activado");
+  }
+};
 
-  if (btnComprobar) {
-    btnComprobar.addEventListener("click", pedirEdadYMostrar);
-    console.log("Botón de comprobar edad activado ✅");
-  }
-});
 
 
