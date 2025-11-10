@@ -1,1 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Página 1 - Principal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header><h1>Página Principal - Ejercicio de Programación Web</h1></header>
+
+  <div class="container">
+    <p>Esta página principal contiene 3 botones que llevan a las otras páginas. Aquí verás un saludo con tu nombre.</p>
+
+    <div>
+      <a class="btn" href="index.html" onclick="pedirNombreYSaludar(); return false;">Iniciar (saludo)</a>
+      <a class="btn" href="pagina2.html">Ir a Galería (Página 2)</a>
+      <a class="btn" href="pagina3.html">Ir a Tabla (Página 3)</a>
+    </div>
+
+    <h3>Nombre ingresado: <span id="nombreUsuario" style="font-weight:600">[aún no ingresado]</span></h3>
+
+    <p>Descripción: La Página 2 tendrá una galería de imágenes con animaciones; la Página 3 tendrá una tabla con operaciones (multiplicación, exponente al cuadrado, resta) que se calculan con JS.</p>
+  </div>
+
+  <script src="js/script.js"></script>
+ <script>window.onload = pedirNombreYSaludar;</script> 
+</body>
+</html>
 
