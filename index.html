@@ -8,23 +8,23 @@
 </head>
 <body>
   <header><h1>Página Principal - Ejercicio de Programación Web</h1></header>
-
   <div class="container">
-    <p>Esta página principal contiene 3 botones que llevan a las otras páginas. Bienvenida, Bianca Galeano.</p>
+    <p>Esta página principal contiene 3 botones que llevan a las otras páginas. Aquí verás un saludo con tu nombre.</p>
 
     <div>
-     <button class="btn" type="button" onclick="pedirNombreYSaludar()">Iniciar (saludo)</button>
-      <a class="btn" href="pagina2.html">Ir a Galería </a>
-      <a class="btn" href="pagina3.html">Ir a Tabla </a>
+      <button id="btnIniciar" class="btn" type="button">Iniciar (saludo)</button>
+      <a class="btn" href="pagina2.html">Ir a Galería (Página 2)</a>
+      <a class="btn" href="pagina3.html">Ir a Tabla (Página 3)</a>
     </div>
 
-    <h3>Nombre ingresado: <span id="nombreUsuario" style="font-weight:600">[aún no ingresado]</span></h3>
+    <h3>Nombre ingresado: 
+      <span id="nombreUsuario" style="font-weight:600">[aún no ingresado]</span>
+    </h3>
 
-    <p>Descripción: La Página 2 tendrá una galería de imágenes con animaciones; la Página 3 tendrá una tabla con operaciones (multiplicación, exponente al cuadrado, resta) que se calculan con JS.</p>
+    <p>Descripción: La Página 2 contiene una galería con animaciones y un script que pide tu edad.  
+    La Página 3 incluye una tabla con operaciones básicas de JavaScript.</p>
   </div>
 
   <script src="js/script.js"></script>
- <script>window.onload = pedirNombreYSaludar;</script> 
 </body>
 </html>
-
