@@ -1,5 +1,6 @@
 // script.js - Funciones para todas las páginas
 
+// --- Función de saludo ---
 function pedirNombreYSaludar() {
   alert("Bienvenido/a a la página principal");
   const nombre = prompt("¿Cuál es tu nombre?");
@@ -13,6 +14,7 @@ function pedirNombreYSaludar() {
   }
 }
 
+// --- Función de edad ---
 function pedirEdadYMostrar() {
   alert("Bienvenido/a a la galería");
   const edadRaw = prompt("Por favor, ingresa tu edad:");
@@ -27,6 +29,7 @@ function pedirEdadYMostrar() {
   }
 }
 
+// --- Funciones de operaciones ---
 function operMultiplicacion() {
   const a = Number(prompt("Primer número:"));
   const b = Number(prompt("Segundo número:"));
@@ -47,14 +50,31 @@ function operResta() {
   else alert("Valores inválidos.");
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+// --- Eventos cuando carga el documento ---
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("script.js cargado correctamente");
+
+  // Si ya hay nombre guardado, mostrarlo
   const span = document.getElementById("nombreUsuario");
   const nombreGuardado = localStorage.getItem("nombreUsuario");
   if (span && nombreGuardado) span.textContent = nombreGuardado;
 
+  // Botones
   const btnIniciar = document.getElementById("btnIniciar");
   const btnComprobar = document.getElementById("btnComprobarEdad");
-  if (btnIniciar) btnIniciar.addEventListener("click", pedirNombreYSaludar);
-  if (btnComprobar) btnComprobar.addEventListener("click", pedirEdadYMostrar);
+
+  // Verificar y asignar eventos
+  if (btnIniciar) {
+    btnIniciar.addEventListener("click", pedirNombreYSaludar);
+    console.log("Botón de saludo activado ✅");
+  } else {
+    console.warn("No se encontró el botón #btnIniciar");
+  }
+
+  if (btnComprobar) {
+    btnComprobar.addEventListener("click", pedirEdadYMostrar);
+    console.log("Botón de comprobar edad activado ✅");
+  }
 });
+
 
